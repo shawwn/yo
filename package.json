@@ -14,7 +14,9 @@
     "report": "cat results.bin | vegeta report",
     "report-plot": "rm -f plot.html && cat results.bin | vegeta report -reporter=plot > plot.html && open plot.html",
     "report-hist": "cat results.bin | vegeta report -reporter='hist[0,100ms,200ms,300ms,500ms,1s,2s,5s,10s]'",
-    "attack": "npm run hadouken && npm run report && npm run report-hist && npm run report-plot"
+    "attack": "npm run hadouken && npm run report && npm run report-hist && npm run report-plot",
+    "update-api": "rake rswag:specs:swaggerize",
+    "doc": "npm run update-api && echo docs are at /api-docs && echo schema is at /api-docs/v1/swagger.json"
   },
   "repository": {
     "type": "git",
