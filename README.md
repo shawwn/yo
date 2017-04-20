@@ -20,6 +20,15 @@ Use Elastic Beanstalk's monitoring facilities.
 
 # API
 
+[Swagger schema](http://yoyo.us-west-2.elasticbeanstalk.com/api-docs/v1/swagger.json)
+
+[Api docs](http://yoyo.us-west-2.elasticbeanstalk.com/api-docs).
+
+This app uses [rwswag](https://github.com/domaindrivendev/rswag). The
+API is defined in `spec/integration/*_spec.rb` files. After modifying
+these files, run `npm run doc` to re-generate the swagger API and
+documentation.
+
 ## /yo
 ## /yo.json
 
