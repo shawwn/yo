@@ -4,6 +4,10 @@ Deploy via [beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/cre
 
 Current production server is at [http://yoyo.us-west-2.elasticbeanstalk.com](http://yoyo.us-west-2.elasticbeanstalk.com).
 
+# Testing
+```
+$ rails test
+```
 
 # API
 
