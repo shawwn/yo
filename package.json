@@ -1,0 +1,29 @@
+{
+  "name": "shawwn-yo",
+  "version": "0.0.0",
+  "description": "Deploy via [beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Ruby_rails.html).",
+  "scripts": {
+    "setup": "gem install bundle && bundle install && rails db:migrate",
+    "server": "rails s",
+    "console": "echo run this: rails c --sandbox",
+    "test": "exec rails test",
+    "logs": "eb logs",
+    "deploy": "eb deploy",
+    "yo": "curl http://yoyo.us-west-2.elasticbeanstalk.com/yo.json?name=ed",
+    "hadouken": "echo 'GET http://yoyo.us-west-2.elasticbeanstalk.com/yo.json?name=ed' | vegeta attack -duration=5s > results.bin",
+    "report": "cat results.bin | vegeta report",
+    "report-plot": "rm -f plot.html && cat results.bin | vegeta report -reporter=plot > plot.html && open plot.html",
+    "report-hist": "cat results.bin | vegeta report -reporter='hist[0,100ms,200ms,300ms,500ms,1s,2s,5s,10s]'",
+    "attack": "npm run hadouken && npm run report && npm run report-hist && npm run report-plot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawwn/yo.git"
+  },
+  "author": "Shawn Presser <shawnpresser@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawwn/yo/issues"
+  },
+  "homepage": "https://github.com/shawwn/yo#readme"
+}
