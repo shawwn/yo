@@ -8,7 +8,7 @@ Current production server is at [http://yoyo.us-west-2.elasticbeanstalk.com](htt
 # Testing
 `npm run test`
 
-To test the production response time, install [vegeta](https://github.com/tsenart/vegeta) then:
+To test the production response time, install [vegeta](https://github.com/tsenart/vegeta), then run:
 
 `npm run attack`
 
