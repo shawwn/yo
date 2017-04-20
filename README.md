@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Deploy via [beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Ruby_rails.html).
 
-Things you may want to cover:
+Current production server is at [http://yoyo.us-west-2.elasticbeanstalk.com](http://yoyo.us-west-2.elasticbeanstalk.com).
 
-* Ruby version
 
-* System dependencies
+# API
 
-* Configuration
+## /yo
+## /yo.json
 
-* Database creation
+### Request
 
-* Database initialization
+```
+GET /yo
+GET /yo.json
+```
 
-* How to run the test suite
+```
+# optional params
+{
+  name: "your name"
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Success response
+```
+# /yo
+yo
 
-* Deployment instructions
+# /yo?name=ed
+yo ed
 
-* ...
+# /yo.json
+{
+    "code": 200,
+    "status": "ok",
+    "message": "yo"
+}
+
+# /yo.json?name=ed
+{
+    "code": 200,
+    "status": "ok",
+    "message": "yo ed"
+}
+```
+
+### Error response
+```
+{
+    "code": 500,
+    "status": "error",
+    "error": "Internal error"
+}
+```
