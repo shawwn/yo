@@ -1,11 +1,18 @@
 class YoController < ApplicationController
+
   def index
-    l = ["yo"]
-    l.push(params[:name]) if params.key?(:name)
+    @name = params[:name] if params.key?(:name)
 
     respond_to do |format|
-      format.json { render json: { response: "ok", message: l.join(" ").to_json }.to_json }
-      format.html { render html: l.join(" ") }
+      format.html { render }
+      format.json {
+        message = @name.nil? ? "yo" : "yo #{@name}"
+        render json: {
+          code: 200,
+          status: "ok",
+          message: message
+        }.to_json
+      }
     end
   end
 end
